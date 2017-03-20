@@ -2510,7 +2510,21 @@ module.exports = __webpack_require__(11);
 /***/ 48:
 /***/ (function(module, exports) {
 
-console.log('adonis');
+(function () {
+  var display = {
+    init: function init() {
+      display.slideshow();
+    },
+    slideshow: function slideshow() {
+      var slide = window.setInterval(display.nextSlide, 1000);
+    },
+    nextSlide: function nextSlide() {
+      console.log('test');
+    }
+  };
+
+  display.init();
+})();
 
 /***/ }),
 
