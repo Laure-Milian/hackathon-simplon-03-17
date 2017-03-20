@@ -2508,14 +2508,15 @@ module.exports = __webpack_require__(11);
 /***/ }),
 
 /***/ 48:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-(function () {
+/* WEBPACK VAR INJECTION */(function($) {(function () {
   var display = {
     modulesList: ["meteo", "planning", "blog", "anniversaire"],
     moduleToDisplay: 3,
     init: function init() {
-      display.slideshow();
+      // display.slideshow();
+      display.displaySlide();
     },
     slideshow: function slideshow() {
       var slide = window.setInterval(display.nextSlide, 1000);
@@ -2528,11 +2529,16 @@ module.exports = __webpack_require__(11);
         display.moduleToDisplay = 0;
         console.log(display.modulesList[display.moduleToDisplay]);
       }
+    },
+    displaySlide: function displaySlide() {
+      var module = display.modulesList[display.moduleToDisplay];
+      $("*[data-module='" + module + "']").css("display", "block");
     }
   };
 
   display.init();
 })();
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
 
