@@ -7,13 +7,13 @@
 </head>
 <body>
 	<div class="content">
-		<h2 class="title">Les dernières actus du blog</h2>
+		<h2 class="title"><img class="logo" src="http://www.groupe-adonis.fr/sites/groupe-adonis.fr/files/logo_2.png" alt="logo Adonis">Les dernières actus du blog</h2>
 		
 		<div class="row">
 		
 			@foreach ($articles as $article)
 			
-			<div class="col-xs-6 col-md-4">
+			<div class="col-xs-6 col-md-4 articles">
 				<h3>{{ $article[0] }}</h3>
 				
 				<div class="details">
@@ -22,12 +22,8 @@
 				</div>
 				
 				<div class="article">
-					<div>
 						<img src="{{ $article[3] }}"/>
-					</div>
-					<div>
 						<p>{{ $article[4] }}</p>
-					</div>
 				</div>
 			</div>
 		

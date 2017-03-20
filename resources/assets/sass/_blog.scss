@@ -1,16 +1,37 @@
+body {
+	background: #16405B;
+}
+
 .content {
-	width: 80%;
+	width: 93%;
 	margin: auto;
+}
+.articles {
+	border: solid white 2px;
+	margin: 1.5em;
 }
 
 .title {
 	text-align: center;
-	border: solid grey 3px;
-	padding: 1em;
+	background: #8BDB35;
 }
 
-.row, .details, .article {
+h2, h3 {
+	color: white;
+	font-weight: bold;
+}
+
+p {
+	color: white;
+}
+
+.row, .details {
 	display: flex;
 	flex-direction: row;
+}
+
+.article {
+	display: flex;
+	align-items: center;
 }
 
