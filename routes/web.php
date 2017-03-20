@@ -19,3 +19,4 @@ Route::get('/admin', function(){
     return view('display.admin');
 });
 Route::post('/admin', 'AdminController@getAdminInfo');
+Route::get('/{ville}', 'AdminController@displayCentre');

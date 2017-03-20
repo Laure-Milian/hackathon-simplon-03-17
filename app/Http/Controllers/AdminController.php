@@ -27,7 +27,19 @@ class AdminController extends Controller
         $json->$centre = $data;
         $json = json_encode($json);
         Storage::put('configCentre.json', $json);
-        
+
         dd($json);
+    }
+
+    public function displayCentre($ville){
+        $json = Storage::get('configCentre.json');
+        $json = json_decode($json);
+        $configCentre = [];
+        foreach ($json->$ville as $key => $value) {
+            if($value){
+                array_push($configCentre, $value);
+            };
+        };
+        return view('display.modules', ['ville' => $configCentre]);
     }
 }
