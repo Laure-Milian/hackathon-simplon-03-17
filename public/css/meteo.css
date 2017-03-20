@@ -21,3 +21,11 @@
 	text-align: center;
 	margin-top: 2em;
 }
+
+.credits_meteo {
+	text-align: right;
+	font-style: italic;
+	font-size: 1em;
+	color: grey;
+	margin: 8em 2em 0 0;
+}

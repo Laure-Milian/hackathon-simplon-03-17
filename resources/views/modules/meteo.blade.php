@@ -74,6 +74,8 @@
         </div>
     </div>
 
+    <p class="credits_meteo">www.prevision-meteo.ch</p>
+
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/3.2.0/jquery.min.js"></script>
