@@ -2515,18 +2515,21 @@ module.exports = __webpack_require__(11);
     modulesList: ["meteo", "planning", "blog", "anniversaire"],
     moduleToDisplay: 3,
     init: function init() {
-      // display.slideshow();
+      display.slideshow();
     },
     slideshow: function slideshow() {
       var slide = window.setInterval(display.nextSlide, 1000);
     },
     nextSlide: function nextSlide() {
+      display.nextModule();
+      display.hideAllModules();
+      display.displaySlide();
+    },
+    nextModule: function nextModule() {
       if (display.moduleToDisplay <= 2) {
         display.moduleToDisplay++;
-        console.log(display.modulesList[display.moduleToDisplay]);
       } else {
         display.moduleToDisplay = 0;
-        console.log(display.modulesList[display.moduleToDisplay]);
       }
     },
     displaySlide: function displaySlide() {

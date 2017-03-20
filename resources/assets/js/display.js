@@ -3,18 +3,21 @@
     modulesList: ["meteo", "planning", "blog", "anniversaire"],
     moduleToDisplay : 3,
     init(){
-      // display.slideshow();
+      display.slideshow();
     },
     slideshow(){
       let slide = window.setInterval(display.nextSlide, 1000);
     },
     nextSlide(){
+      display.nextModule();
+      display.hideAllModules();
+      display.displaySlide();
+    },
+    nextModule(){
       if(display.moduleToDisplay <= 2){
         display.moduleToDisplay++;
-        console.log(display.modulesList[display.moduleToDisplay]);
       } else {
         display.moduleToDisplay = 0;
-        console.log(display.modulesList[display.moduleToDisplay]);
       }
     },
     displaySlide(){
