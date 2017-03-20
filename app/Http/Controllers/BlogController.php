@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-	public function getItem() {
+	public function getArticles() {
 
 		$html = new \DOMDocument();
 		@$html->loadHtmlFile('http://www.groupe-adonis.fr/blog');
@@ -57,33 +57,8 @@ class BlogController extends Controller
 			$tab[] = $image->getAttribute('src');
 		}
 
-		//Display
-		echo 'Article 3:';
-		echo '<ul>';
-		echo '<li>'.$resultTitle[0].'</li>';
-		echo '<li>'.$date1.'</li>';
-		echo '<li>'.$resultCrea[0].'</li>';
-		echo '<li><img src="'.$tab[2].'"></li>';
-		echo '<li>'.$resultDes[0].'</li>';
-		echo '</ul>';
-
-		echo 'Article 2:';
-		echo '<ul>';
-		echo '<li>'.$resultTitle[1].'</li>';
-		echo '<li>'.$date2.'</li>';
-		echo '<li>'.$resultCrea[1].'</li>';
-		echo '<li><img src="'.$tab[3].'"></li>';
-		echo '<li>'.$resultDes[1].'</li>';
-		echo '</ul>';
-
-		echo 'Article 1:';
-		echo '<ul>';
-		echo '<li>'.$resultTitle[2].'</li>';
-		echo '<li>'.$date3.'</li>';
-		echo '<li>'.$resultCrea[2].'</li>';
-		echo '<li><img src="'.$tab[4].'"></li>';
-		echo '<li>'.$resultDes[2].'</li>';
-		echo '</ul>';
+		$tabLastArticle = array();
+		array_push($tabLastArticle, $resultTitle[0], $date1, $resultCrea[0], $tab[2], $resultDes[0]);
 
 		return view('modules.blog');
 	}
