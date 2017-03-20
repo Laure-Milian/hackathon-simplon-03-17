@@ -19,5 +19,8 @@
       @include('modules.module4')
     </div>
 
+  <script type="text/javascript" src="/js/app.js">
+
+  </script>
   </body>
 </html>
