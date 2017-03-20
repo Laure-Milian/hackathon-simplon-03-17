@@ -2516,7 +2516,6 @@ module.exports = __webpack_require__(11);
     moduleToDisplay: 3,
     init: function init() {
       // display.slideshow();
-      display.displaySlide();
     },
     slideshow: function slideshow() {
       var slide = window.setInterval(display.nextSlide, 1000);
@@ -2533,6 +2532,9 @@ module.exports = __webpack_require__(11);
     displaySlide: function displaySlide() {
       var module = display.modulesList[display.moduleToDisplay];
       $("*[data-module='" + module + "']").css("display", "block");
+    },
+    hideAllModules: function hideAllModules() {
+      $(".module").css("display", "none");
     }
   };
 

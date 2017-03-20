@@ -4,7 +4,6 @@
     moduleToDisplay : 3,
     init(){
       // display.slideshow();
-      display.displaySlide();
     },
     slideshow(){
       let slide = window.setInterval(display.nextSlide, 1000);
@@ -21,6 +20,9 @@
     displaySlide(){
       let module = display.modulesList[display.moduleToDisplay];
       $("*[data-module='" + module + "']").css("display", "block");
+    },
+    hideAllModules(){
+      $(".module").css("display", "none");
     }
   }
 
