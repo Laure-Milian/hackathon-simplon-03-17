@@ -2512,6 +2512,8 @@ module.exports = __webpack_require__(11);
 
 (function () {
   var display = {
+    modulesList: ["meteo", "planning", "blog", "anniversaire"],
+    moduleToDisplay: 3,
     init: function init() {
       display.slideshow();
     },
@@ -2519,7 +2521,13 @@ module.exports = __webpack_require__(11);
       var slide = window.setInterval(display.nextSlide, 1000);
     },
     nextSlide: function nextSlide() {
-      console.log('test');
+      if (display.moduleToDisplay <= 2) {
+        display.moduleToDisplay++;
+        console.log(display.modulesList[display.moduleToDisplay]);
+      } else {
+        display.moduleToDisplay = 0;
+        console.log(display.modulesList[display.moduleToDisplay]);
+      }
     }
   };
 
