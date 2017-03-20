@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/modules', 'BlogController@getItem' );
+Route::get('/modules/blog', 'BlogController@getArticles');
+
