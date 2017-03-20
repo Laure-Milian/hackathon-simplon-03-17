@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::get('/admin', function(){
     return view('display.admin');
 });
+Route::post('/admin', 'AdminController@getAdminInfo');
