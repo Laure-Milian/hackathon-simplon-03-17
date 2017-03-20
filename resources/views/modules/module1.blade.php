@@ -1,2 +1,0 @@
-
-  <h2>JE SUIS LE MODULE 1</h2>

@@ -8,16 +8,16 @@
   <body>
 
     <div class="module" data-module="meteo">
-      @include('modules.module1')
+      @include('modules.meteo')
     </div>
     <div class="module" data-module="planning">
-      @include('modules.module2')
+      @include('modules.planning')
     </div>
     <div class="module" data-module="blog">
-      @include('modules.module3')
+      @include('modules.blog')
     </div>
     <div class="module" data-module="anniversaire">
-      @include('modules.module4')
+      @include('modules.anniversaire')
     </div>
 
   <script type="text/javascript" src="/js/app.js">
