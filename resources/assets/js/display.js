@@ -1,5 +1,6 @@
 (function(){
   let display = {
+    modulesList: [meteo, planning, blog, anniversaire],
     init(){
       display.slideshow();
     },
@@ -7,7 +8,6 @@
       let slide = window.setInterval(display.nextSlide, 1000);
     },
     nextSlide(){
-      console.log('test');
     }
   }
 
