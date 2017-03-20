@@ -12,10 +12,11 @@ class ProfController extends Controller
     $dateNow = date('m-d');
     foreach ($profs as $value) {
       $birthday = substr($value->dateNaissance, 5);
-      if ($dateNow == $birthday) {
-        echo $value->dateNaissance.$value->prenom;
+      if ($dateNow == $birthday && substr($value->CP,0,2) == "31") {
+        echo $value->prenom.substr($value->dateNaissance,5);
       }
     }
     return view('modules.prof', compact('profs'));
   }
+
 }
