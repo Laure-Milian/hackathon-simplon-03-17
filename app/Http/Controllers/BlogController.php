@@ -13,19 +13,18 @@ class BlogController extends Controller
 		$xpath = new \DOMXPath($html);
 
 		//Get title
-		$title = $xpath->query("//div[contains(@class, 'article_title')]");
+		$titles = $xpath->query("//div[contains(@class, 'article_title')]");
 		$i = 0;
-		foreach ($title as $exemple) {
-			$resultTitle[$i++] = $exemple->nodeValue;
+		foreach ($titles as $title) {
+			$resultTitle[$i++] = $title->nodeValue;
 		}
 		
 		//Get description
-		$description = $html->getElementsByTagName('p');
+		$descriptions = $html->getElementsByTagName('p');
 		$i = 0;
-		foreach ($description as $exemple) {
-			$resultDes[$i++] = $exemple->nodeValue;
+		foreach ($descriptions as $description) {
+			$resultDes[$i++] = $description->nodeValue;
 		}
-
 
 		//Get publication date
 		$url = "http://www.groupe-adonis.fr/blog/feed";
@@ -44,13 +43,18 @@ class BlogController extends Controller
 		$datetime3 = date_create($resultPub[2]);
 		$date3 = date_format($datetime3, 'd M Y, H\hi');
 
-
-
 		//Get creator
-		$creator = $xpath->query("//span[contains(@class, 'username')]");
+		$creators = $xpath->query("//span[contains(@class, 'username')]");
 		$i = 0;
-		foreach ($creator as $exemple) {
-			$resultCrea[$i++] = $exemple->nodeValue;
+		foreach ($creators as $creator) {
+			$resultCrea[$i++] = $creator->nodeValue;
+		}
+
+		//Get Image 
+		$images =  $html->getElementsByTagName('img');
+		$i = 0;
+		foreach ($images as $image) {
+			$tab[] = $image->getAttribute('src');
 		}
 
 		//Display
@@ -59,6 +63,7 @@ class BlogController extends Controller
 		echo '<li>'.$resultTitle[0].'</li>';
 		echo '<li>'.$date1.'</li>';
 		echo '<li>'.$resultCrea[0].'</li>';
+		echo '<li><img src="'.$tab[2].'"></li>';
 		echo '<li>'.$resultDes[0].'</li>';
 		echo '</ul>';
 
@@ -67,6 +72,7 @@ class BlogController extends Controller
 		echo '<li>'.$resultTitle[1].'</li>';
 		echo '<li>'.$date2.'</li>';
 		echo '<li>'.$resultCrea[1].'</li>';
+		echo '<li><img src="'.$tab[3].'"></li>';
 		echo '<li>'.$resultDes[1].'</li>';
 		echo '</ul>';
 
@@ -75,6 +81,7 @@ class BlogController extends Controller
 		echo '<li>'.$resultTitle[2].'</li>';
 		echo '<li>'.$date3.'</li>';
 		echo '<li>'.$resultCrea[2].'</li>';
+		echo '<li><img src="'.$tab[4].'"></li>';
 		echo '<li>'.$resultDes[2].'</li>';
 		echo '</ul>';
 
