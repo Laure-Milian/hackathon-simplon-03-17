@@ -7,16 +7,16 @@
   </head>
   <body>
 
-    <div class="module">
+    <div class="module" data-module="meteo">
       @include('modules.module1')
     </div>
-    <div class="module">
+    <div class="module" data-module="planning">
       @include('modules.module2')
     </div>
-    <div class="module">
+    <div class="module" data-module="blog">
       @include('modules.module3')
     </div>
-    <div class="module">
+    <div class="module" data-module="anniversaire">
       @include('modules.module4')
     </div>
 
