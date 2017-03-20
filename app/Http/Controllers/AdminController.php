@@ -29,7 +29,9 @@ class AdminController extends Controller
             Storage::put('configCentre.json', $json);
         }
         else {
-            dd(false);
+            $json->$centre = $data;
+            $json = json_encode($json);
+            Storage::put('configCentre.json', $json);
         }
         dd($json);
     }
