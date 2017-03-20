@@ -23,16 +23,11 @@ class AdminController extends Controller
     public function testCentre($centre, $data){
         $json = Storage::get('configCentre.json');
         $json = json_decode($json);
-        if(isset($json->$centre)){
-            $json->$centre = $data;
-            $json = json_encode($json);
-            Storage::put('configCentre.json', $json);
-        }
-        else {
-            $json->$centre = $data;
-            $json = json_encode($json);
-            Storage::put('configCentre.json', $json);
-        }
+
+        $json->$centre = $data;
+        $json = json_encode($json);
+        Storage::put('configCentre.json', $json);
+        
         dd($json);
     }
 }
