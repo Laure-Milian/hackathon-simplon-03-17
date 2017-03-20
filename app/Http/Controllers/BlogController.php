@@ -66,6 +66,7 @@ class BlogController extends Controller
 		$tabFirstArticle = array();
 		array_push($tabFirstArticle, $resultTitle[2], $date3, $resultCrea[2], $tab[4], $resultDes[2]);
 
-		return view('modules.blog');
+		$tabArticles = array();
+		array_push($tabArticles, $tabLastArticle, $tabArticle2, $tabFirstArticle);
 	}
 }
