@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Adonis_tl;
 use App\Centre;
 use App\Lien_F_Cen;
+use App\Prof;
+use App\Locaux;
 use Carbon\Carbon;
 
 class PlanningController extends Controller
@@ -18,13 +20,15 @@ class PlanningController extends Controller
     	$today = substr(Carbon::now(), 0, 10);
     	$this->_events = Adonis_tl::where('laDate', '>=', $today)
 		->orderBy('laDate', 'asc')
+		->orderBy('debut', 'asc')
 		->take(3000)
 		->get();
 		$num_center = $this->selectCenter();
 		$num_formation = $this->getNumFormation($num_center);
 		$this->selectEvents($num_formation);
-		var_dump($this->_selected_events);
-    	return view('modules/planning');
+		$this->getTeacherName();
+		$this->getLocalName();
+    	return view('modules/planning', ['events' => $this->_selected_events]);
     }
 
     public function selectCenter() {
@@ -63,6 +67,20 @@ class PlanningController extends Controller
     			array_push($this->_selected_events, $event);
     		}
     	}
+    }
+
+    public function getTeacherName() {
+    	foreach ($this->_selected_events as $event) {
+    		$prof = Prof::where('Num_Prof', $event->Num_Prof)->get(['nom']);
+    		$event->Num_Prof = $prof;
+    	}
+    }
+
+    public function getLocalName() {
+    	foreach ($this->_selected_events as $event) {
+    		$local = Locaux::where('Num_L', $event->Num_Salle)->get(['Nom']);
+    		$event->Num_Salle = $local;
+    	}   	
     }
 
 }
