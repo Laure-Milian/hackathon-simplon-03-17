@@ -50,7 +50,11 @@ class AdminController extends Controller
         $json = json_decode($json);
         $configCentre = $json->$ville;
         $articles = app('App\Http\Controllers\BlogController')->getArticles();
+        $profDate = app('App\Http\Controllers\ProfController')->getDates();
 
-        return view('display.modules', ['configCentre' => $configCentre, 'ville' => $ville, 'articles' => $articles]);
+        $profs = $profDate[0];
+        $dateNow = $profDate[1];
+
+        return view('display.modules', ['configCentre' => $configCentre, 'ville' => $ville, 'articles' => $articles, 'dateNow' => $dateNow, 'profs' => $profs]);
     }
 }
