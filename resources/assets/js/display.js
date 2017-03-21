@@ -15,6 +15,7 @@
       }
     },
     slideshow(){
+      display.nextSlide();
       let slide = window.setInterval(display.nextSlide, 5000);
     },
     nextSlide(){

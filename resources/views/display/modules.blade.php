@@ -12,13 +12,13 @@
     <div class="module meteo" data-module="meteo">
       @include('modules.meteo')
     </div>
-    <div class="module" data-module="planning">
+    <div class="module planning" data-module="planning">
       @include('modules.planning')
     </div>
     <div class="module blog" data-module="blog">
       @include('modules.blog')
     </div>
-    <div class="module" data-module="anniversaire">
+    <div class="module anniversaire" data-module="anniversaire">
       @include('modules.anniversaire')
     </div>
 
