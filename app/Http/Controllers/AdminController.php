@@ -51,12 +51,13 @@ class AdminController extends Controller
         $configCentre = $json->$ville;
         $articles = app('App\Http\Controllers\BlogController')->getArticles();
 
-        $profDate = app('App\Http\Controllers\ProfController')->getDates();
+        $profDate = app('App\Http\Controllers\ProfController')->getDates($ville);
         $profs = $profDate[0];
         $dateNow = $profDate[1];
+        $codePostal = $profDate[2];
 
         $events = app('App\Http\Controllers\PlanningController')->getEventsFromTimeline($ville);
 
-        return view('display.modules', ['configCentre' => $configCentre, 'ville' => $ville, 'articles' => $articles, 'dateNow' => $dateNow, 'profs' => $profs, 'events' => $events]);
+        return view('display.modules', ['configCentre' => $configCentre, 'ville' => $ville, 'articles' => $articles, 'dateNow' => $dateNow, 'profs' => $profs, 'codePostal' => $codePostal, 'events' => $events]);
     }
 }
