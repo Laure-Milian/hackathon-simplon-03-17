@@ -18,6 +18,7 @@ class AdminController extends Controller
 
         $jsonCentre = json_encode([$centre => $configCentre]);
         $this->testCentre($centre, $configCentre);
+        return redirect('/'.$centre);
     }
 
     public function testCentre($centre, $data){
@@ -27,22 +28,13 @@ class AdminController extends Controller
         $json->$centre = $data;
         $json = json_encode($json);
         Storage::put('configCentre.json', $json);
-
-        dd($json);
     }
 
     public function displayCentre($ville){
         $json = Storage::get('configCentre.json');
         $json = json_decode($json);
-        // $configCentre = json_encode($json->$ville);
         $configCentre = $json->$ville;
-        // $configCentre = [];
-        // foreach ($json->$ville as $key => $value) {
-        //     if($value){
-        //         array_push($configCentre, $key);
-        //     };
-        // };
-        // dd($configCentre);
+
         return view('display.modules', ['configCentre' => $configCentre]);
     }
 }
