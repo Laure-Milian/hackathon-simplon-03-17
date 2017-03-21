@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Affichage des Modules</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
     <link rel="stylesheet" href="/css/app.css">
   </head>
   <body>
 
-    <div class="module" data-module="meteo">
+    <div class="module meteo" data-module="meteo">
       @include('modules.meteo')
     </div>
     <div class="module" data-module="planning">

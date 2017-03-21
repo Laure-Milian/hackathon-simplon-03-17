@@ -35,6 +35,6 @@ class AdminController extends Controller
         $json = json_decode($json);
         $configCentre = $json->$ville;
 
-        return view('display.modules', ['configCentre' => $configCentre]);
+        return view('display.modules', ['configCentre' => $configCentre, 'ville' => $ville]);
     }
 }
