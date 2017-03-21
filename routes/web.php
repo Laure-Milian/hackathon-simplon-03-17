@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/', 'PlanningController@getTimeline');
+Route::get('/', 'PlanningController@getEventsFromTimeline');
