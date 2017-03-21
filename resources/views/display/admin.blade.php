@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/app.css">
   </head>
-  <body>
+  <body class="body-admin">
     <div class="container">
 
       <h1 class="header-admin">Page d'administration</h1>

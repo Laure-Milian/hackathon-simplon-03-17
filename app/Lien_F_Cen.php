@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Prof extends Model
+class Lien_F_Cen extends Model
 {
-	protected $table = 'Prof';
+    protected $table = 'Lien_F_Cen';
 }

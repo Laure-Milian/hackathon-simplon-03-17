@@ -22,4 +22,4 @@ Route::post('/admin', 'AdminController@getAdminInfo');
 
 Route::get('/{ville}', 'AdminController@displayCentre');
 
-// Route::get('/prof', 'ProfController@getDates');
+//Route::get('/', 'PlanningController@getEventsFromTimeline');
