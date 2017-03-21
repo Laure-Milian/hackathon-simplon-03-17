@@ -10388,7 +10388,7 @@ __webpack_require__(5);
       display.displaySlide();
     },
     nextModule: function nextModule() {
-      if (display.moduleToDisplay <= 2) {
+      if (display.moduleToDisplay < display.modulesList.length - 1) {
         display.moduleToDisplay++;
       } else {
         display.moduleToDisplay = 0;

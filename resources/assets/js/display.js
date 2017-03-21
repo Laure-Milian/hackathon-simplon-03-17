@@ -23,7 +23,7 @@
       display.displaySlide();
     },
     nextModule(){
-      if(display.moduleToDisplay <= 2){
+      if(display.moduleToDisplay < display.modulesList.length - 1){
         display.moduleToDisplay++;
       } else {
         display.moduleToDisplay = 0;
