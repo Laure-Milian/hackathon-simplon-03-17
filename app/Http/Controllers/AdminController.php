@@ -34,7 +34,8 @@ class AdminController extends Controller
         $json = Storage::get('configCentre.json');
         $json = json_decode($json);
         $configCentre = $json->$ville;
+        $articles = app('App\Http\Controllers\BlogController')->getArticles();
 
-        return view('display.modules', ['configCentre' => $configCentre, 'ville' => $ville]);
+        return view('display.modules', ['configCentre' => $configCentre, 'ville' => $ville, 'articles' => $articles]);
     }
 }

@@ -14,7 +14,7 @@
     <div class="module" data-module="planning">
       @include('modules.planning')
     </div>
-    <div class="module" data-module="blog">
+    <div class="module blog" data-module="blog">
       @include('modules.blog')
     </div>
     <div class="module" data-module="anniversaire">
