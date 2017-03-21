@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="content">
-		<h2 class="title"><img class="logo" src="http://www.groupe-adonis.fr/sites/groupe-adonis.fr/files/logo_2.png" alt="logo Adonis">Les dernières actus du blog</h2>
+		<h2 class="title"><img class="logo" src="http://www.groupe-adonis.fr/sites/groupe-adonis.fr/files/logo_2.png" alt="logo Adonis">Les dernières actus</h2>
 		
 		<div class="row">
 		
@@ -30,6 +30,8 @@
 			@endforeach
 			
 		</div>
+
+		<h2 class="footer">Retrouvez ces articles en intégralité sur notre blog : www.groupe-adonis.fr/blog !</h2>
 	</div>
 
 </body>
