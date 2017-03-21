@@ -35,6 +35,17 @@ class AdminController extends Controller
     }
 
     public function displayCentre($ville){
+        $centresList = ["aix", "bordeaux", "lille", "lyon", "marseille", "montpellier", "nantes", "paris", "toulouse"];
+        $centreExists = false;
+        for ($i=0; $i < count($centresList) ; $i++) {
+            if($ville === $centresList[$i]){
+                $centreExists = true;
+            }
+        }
+        if(!$centreExists){
+            return redirect('/');
+        }
+
         $json = Storage::get('configCentre.json');
         $json = json_decode($json);
         $configCentre = $json->$ville;
