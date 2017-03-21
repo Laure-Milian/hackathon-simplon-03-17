@@ -3,42 +3,43 @@
 }
 
 .content {
-	max-width: 98%;
-	margin: auto;
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 .articles {
-	border: solid white 2px;
+	margin-left: 0.5vw;
+	margin-top: 4vh;
 	max-width: 30vw;
-	margin: 0.5vw;
-	margin-top: 5vh;
-	background: white;
+	background: #1f4863;
 }
 
 .title {
 	text-align: center;
 	background: #8BDB35;
 	height: 18vh;
-	margin-top: 5vh;
+	margin-top: 3vh;
 	color: white;
 	font-weight: bold;
 	font-size: 4em;
 }
 
-h3 {
-	color: #738C9D;
+.subtitle {
+	color: #FEFEFE;
 	font-weight: bold;
 	font-size: 2em;
 	text-align: center;
 }
 
 p {
-	color: #738C9D;
+	color: #FEFEFE;
 }
 
 .row, .details {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-around;
 }
 
 .details {
@@ -60,6 +61,6 @@ p {
 	text-align: center;
 	color: #8BDB35;
 	font-weight: bold;
-	margin-top: 4vh;
+	margin-top: 5vh;
 	font-size: 2.3em;
 }

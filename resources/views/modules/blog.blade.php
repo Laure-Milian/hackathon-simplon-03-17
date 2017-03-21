@@ -1,4 +1,4 @@
-	<div class="content">
+	 <div class="container-fluid bs-callout bs-callout-danger">
 		<h2 class="title"><img class="logo" src="http://www.groupe-adonis.fr/sites/groupe-adonis.fr/files/logo_2.png" alt="logo Adonis">Les dernières actus</h2>
 
 		<div class="row">
@@ -6,11 +6,11 @@
 			@foreach ($articles as $article)
 
 			<div class="col-xs-6 col-md-4 articles">
-				<h3>{{ $article[0] }}</h3>
+				<h3 class="subtitle">{{ $article[0] }}</h3>
 
 				<div class="details">
 					<p>Publié le {{ $article[1] }}</p>
-					<p>&nbsp; par {{ $article[2] }}</p>
+					<p>&nbsp;par {{ $article[2] }}</p>
 				</div>
 
 				<div class="article">
