@@ -20,8 +20,9 @@
       @include('modules.anniversaire')
     </div>
 
-  <script type="text/javascript" src="/js/app.js">
-
-  </script>
+    <script type="text/javascript">
+      var data = {!! json_encode($configCentre) !!};
+    </script>
+    <script type="text/javascript" src="/js/app.js"></script>
   </body>
 </html>

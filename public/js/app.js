@@ -10365,10 +10365,19 @@ __webpack_require__(5);
 
 /* WEBPACK VAR INJECTION */(function($) {(function () {
   var display = {
-    modulesList: ["meteo", "planning", "blog", "anniversaire"],
+    configCentre: data,
+    modulesList: [],
     moduleToDisplay: 3,
     init: function init() {
-      display.slideshow();
+      this.objectToArray();
+      this.slideshow();
+    },
+    objectToArray: function objectToArray() {
+      for (var module in this.configCentre) {
+        if (this.configCentre[module]) {
+          this.modulesList.push(module);
+        }
+      }
     },
     slideshow: function slideshow() {
       var slide = window.setInterval(display.nextSlide, 1000);

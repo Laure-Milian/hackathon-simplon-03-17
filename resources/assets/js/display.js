@@ -1,9 +1,18 @@
 (function(){
   let display = {
-    modulesList: ["meteo", "planning", "blog", "anniversaire"],
+    configCentre: data,
+    modulesList: [],
     moduleToDisplay : 3,
     init(){
-      display.slideshow();
+      this.objectToArray();
+      this.slideshow();
+    },
+    objectToArray(){
+      for (var module in this.configCentre) {
+        if(this.configCentre[module]){
+          this.modulesList.push(module);
+        }
+      }
     },
     slideshow(){
       let slide = window.setInterval(display.nextSlide, 1000);
