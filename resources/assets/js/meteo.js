@@ -3,7 +3,6 @@
 	let meteoApp = {
 
 	 	init: function() {
-	 		console.log("hehehe");
 	 		this.getWeather();
 	 	},
 
@@ -12,7 +11,7 @@
 	 		let url = "http://www.prevision-meteo.ch/services/json/" + city;
 	        $.get(url)
 	        .done(function(response) {
-	            meteoApp.showCurrentData(response.current_condition);
+	            meteoApp.showNextDaysData(response.fcst_day_0, "day0");
 	            meteoApp.showNextDaysData(response.fcst_day_1, "day1");
 	            meteoApp.showNextDaysData(response.fcst_day_2, "day2");
 	            meteoApp.showNextDaysData(response.fcst_day_3, "day3");

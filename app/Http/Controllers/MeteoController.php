@@ -14,8 +14,10 @@ class MeteoController extends Controller
 		
 		// $villes = Centre::all();
 		// return view ('modules/meteo', ['villes' => $villes]);
-		
-		$ville = ucfirst("toulouse");
+		$ville = "aix";
+		if ($ville === "aix") {
+			$ville = "aix-en-provence";
+		}
 		return view('modules/meteo', ['ville' => $ville]);
 	}
 

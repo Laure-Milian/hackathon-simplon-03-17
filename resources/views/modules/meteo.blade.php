@@ -13,6 +13,10 @@
 </head>
 <body>
 
+@extends('display.modules')
+
+@section('meteo')
+
     <div id="meteo" class="container-fluid bs-callout bs-callout-danger">
         <h1 id="city">{{$ville}}</h1>
 
@@ -20,7 +24,7 @@
         <div class="card main_card_meteo">
             <div class="card-block main_card_meteo_block">
                     <div class="main_card_meteo_inline">
-                        <img id="meteo_icon" src="http://www.prevision-meteo.ch/style/images/icon/ensoleille-big.png">
+                        <img id="day0_icon" src="http://www.prevision-meteo.ch/style/images/icon/ensoleille-big.png">
                     </div>
                     <div class="main_card_meteo_inline">
                         <h2>
@@ -30,13 +34,12 @@
                             echo strftime("%A %d %B %Y");
                             ?>
                         </h2>
-                        <h1 id="condition"></h1>
-                        <h2 id="temperature"></h2>
-                        <h3 id="vent"></h3>
+                        <h1 id="day0_condition"></h1>
+                        <h2 id="day0_tmax"></h2>
+                        <h2 id="day0_tmin"></h2>                        
                     </div>
                 </div>
         </div>
-
         <div class="card-deck">
             <div id="day1" class="card card_meteo">
                 <div>
@@ -76,14 +79,9 @@
 
     <p class="credits_meteo">www.prevision-meteo.ch</p>
 
-
+@endsection 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/3.2.0/jquery.min.js"></script>
-
-<!--  @section('display') -->
-
-<!-- @stop --> 
-
 <script type="text/javascript" src="/js/app.js"></script>
 
 </body>
