@@ -10368,7 +10368,7 @@ __webpack_require__(6);
       }
     },
     slideshow: function slideshow() {
-      var slide = window.setInterval(display.nextSlide, 1000);
+      var slide = window.setInterval(display.nextSlide, 5000);
     },
     nextSlide: function nextSlide() {
       display.nextModule();
