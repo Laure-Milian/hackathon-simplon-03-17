@@ -11,6 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return view('modules/planning');
-});
+Route::get('/', 'PlanningController@getTimeline');
