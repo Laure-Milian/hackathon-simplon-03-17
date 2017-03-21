@@ -9,7 +9,7 @@
   <body>
     <div class="container">
 
-      <h1>Page d'administration</h1>
+      <h1 class="header-admin">Page d'administration</h1>
 
       <form class="admin-form" method="post" action="/admin">
         <div class="form-group">

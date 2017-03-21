@@ -10321,16 +10321,10 @@ return jQuery;
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 __webpack_require__(3);
 
 __webpack_require__(4);
+__webpack_require__(5);
 
 /***/ }),
 /* 2 */
@@ -10352,12 +10346,6 @@ __webpack_require__(4);
 window.$ = window.jQuery = __webpack_require__(0);
 
 __webpack_require__(6);
-
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
 
 /***/ }),
 /* 4 */
@@ -10408,7 +10396,44 @@ __webpack_require__(6);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 5 */,
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {(function () {
+
+	var meteoApp = {
+
+		init: function init() {
+			this.getWeather();
+		},
+
+		getWeather: function getWeather() {
+			var city = $("#city").text();
+			var url = "http://www.prevision-meteo.ch/services/json/" + city;
+			$.get(url).done(function (response) {
+				meteoApp.showNextDaysData(response.fcst_day_0, "day0");
+				meteoApp.showNextDaysData(response.fcst_day_1, "day1");
+				meteoApp.showNextDaysData(response.fcst_day_2, "day2");
+				meteoApp.showNextDaysData(response.fcst_day_3, "day3");
+			});
+		},
+
+		showNextDaysData: function showNextDaysData(data, day) {
+			$("#" + day + "_icon").attr("src", data.icon_big);
+			$("#" + day + "_date").text(data.date);
+			$("#" + day + "_condition").text(data.condition);
+			$("#" + day + "_tmax").text("max : " + data.tmax + "°");
+			$("#" + day + "_tmin").text("min : " + data.tmin + "°");
+		}
+	};
+
+	meteoApp.init();
+})();
+
+// Lien pour credits : www.prevision-meteo.ch
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 

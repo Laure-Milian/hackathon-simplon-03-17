@@ -16,17 +16,21 @@ class AdminController extends Controller
 
         $configCentre = ["meteo" => $meteo, "blog" => $blog, "anniversaire" => $anniversaire, "planning" => $planning];
 
-        $jsonCentre = json_encode([$centre => $configCentre]);
         $this->testCentre($centre, $configCentre);
         return redirect('/'.$centre);
     }
 
     public function testCentre($centre, $data){
-        $json = Storage::get('configCentre.json');
-        $json = json_decode($json);
+        if(Storage::disk('local')->exists('configCentre.json')){
+            $json = Storage::get('configCentre.json');
+            $json = json_decode($json);
 
-        $json->$centre = $data;
-        $json = json_encode($json);
+            $json->$centre = $data;
+            $json = json_encode($json);
+        }
+        else {
+            $json = json_encode([$centre => $data]);
+        }
         Storage::put('configCentre.json', $json);
     }
 
@@ -34,7 +38,8 @@ class AdminController extends Controller
         $json = Storage::get('configCentre.json');
         $json = json_decode($json);
         $configCentre = $json->$ville;
+        $articles = app('App\Http\Controllers\BlogController')->getArticles();
 
-        return view('display.modules', ['configCentre' => $configCentre]);
+        return view('display.modules', ['configCentre' => $configCentre, 'ville' => $ville, 'articles' => $articles]);
     }
 }

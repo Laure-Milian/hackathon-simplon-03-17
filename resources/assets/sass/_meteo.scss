@@ -1,0 +1,37 @@
+#city {
+	display: none;
+}
+
+.main_card_meteo {
+	margin-top: 2em;
+	height: 40vh;
+	vertical-align: middle;
+}
+
+.main_card_meteo_block {
+	width: 50vw;
+	margin: 3em auto;
+}
+
+.main_card_meteo_inline {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 2em;
+}
+
+.card_meteo {
+	text-align: center;
+	margin-top: 2em;
+}
+
+.credits_meteo {
+	text-align: right;
+	font-style: italic;
+	font-size: 1em;
+	color: grey;
+	margin: 2em 2em 0 0;
+}
+
+.meteo {
+	background-color: #16405B;
+}
